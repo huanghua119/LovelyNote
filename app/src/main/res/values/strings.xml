@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LovelyNote</string>
+
+    <string name="note_count">All Notes(0)</string>
+
+    <string name="page_count">0 Page</string>
+</resources>

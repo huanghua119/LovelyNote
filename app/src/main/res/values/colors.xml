@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="title_bar_bg_color">#F4F4F4</color>
+    <color name="note_fragment_bg_color">#F4F4F4</color>
+    <color name="page_fragment_bg_color">#E5E5E5</color>
+</resources>
