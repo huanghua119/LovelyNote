@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/image_editor_pick"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_image_pick"
+        android:titleCondensed="@string/menu_image_pick_condensed"></item>
+    <item
+        android:id="@+id/image_editor_photo"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_image_photo"
+        android:titleCondensed="@string/menu_image_photo_condensed"></item>
+    <item
+        android:id="@+id/image_editor_aspect"
+        android:checkable="true"
+        android:checked="true"
+        android:title="@string/menu_image_aspect"></item>
+
+
+</menu>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="dlg_thickness_title">Pen thickness</string>
+
+    <string-array name="dlg_thickness_entries">
+        <item>Single pixel</item>
+        <item>Ultra-fine</item>
+        <item>Thin</item>
+        <item>Medium</item>
+        <item>Thick</item>
+        <item>Giant</item>
+    </string-array>
+
+    <integer-array name="dlg_thickness_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>12</item>
+        <item>40</item>
+    </integer-array>
+
+    <string name="dlg_background_title">Background</string>
+    <string name="dlg_background_entry_EMPTY">Blank</string>
+    <string name="dlg_background_entry_RULED">Legal ruled</string>
+    <string name="dlg_background_entry_COLLEGERULED">College ruled</string>
+    <string name="dlg_background_entry_NARROWRULED">Narrow ruled</string>
+    <string name="dlg_background_entry_QUADPAPER">Quad paper</string>
+    <string name="dlg_background_entry_CORNELLNOTES">Cornell Notes</string>
+    <string name="dlg_background_entry_DAYPLANNER">Day Planner</string>
+    <string name="dlg_background_entry_MUSIC">Music</string>
+
+    <string-array name="dlg_background_entries">
+        <item>@string/dlg_background_entry_EMPTY</item>
+        <item>@string/dlg_background_entry_RULED</item>
+        <item>@string/dlg_background_entry_COLLEGERULED</item>
+        <item>@string/dlg_background_entry_NARROWRULED</item>
+        <item>@string/dlg_background_entry_QUADPAPER</item>
+        <item>@string/dlg_background_entry_CORNELLNOTES</item>
+        <item>@string/dlg_background_entry_DAYPLANNER</item>
+        <item>@string/dlg_background_entry_MUSIC</item>
+    </string-array>
+    <string-array name="dlg_background_values">
+        <item>EMPTY</item>
+        <item>RULED</item>
+        <item>COLLEGERULED</item>
+        <item>NARROWRULED</item>
+        <item>QUADPAPER</item>
+        <item>CORNELLNOTES</item>
+        <item>DAYPLANNER</item>
+        <item>MUSIC</item>
+    </string-array>
+
+    <string name="dlg_aspect_title">Aspect ratio</string>
+
+    <string-array name="dlg_aspect_entries">
+        <item>Portrait Screen</item>
+        <item>Landscape Screen</item>
+        <item>A4 Paper</item>
+        <item>US Letter</item>
+        <item>US Legal</item>
+        <item>Projector (4:3)</item>
+        <item>HDTV (16:9)</item>
+    </string-array>
+    <string-array name="dlg_aspect_values">
+        <item>ASPECT_PORTRAIT</item>
+        <item>ASPECT_LANDSCAPE</item>
+        <item>ASPECT_A4_PAPER</item>
+        <item>ASPECT_US_LETTER</item>
+        <item>ASPECT_US_LEGAL</item>
+        <item>ASPECT_4_TO_3</item>
+        <item>ASPECT_16_TO_9</item>
+    </string-array>
+
+</resources>

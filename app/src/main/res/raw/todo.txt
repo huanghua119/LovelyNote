@@ -1,0 +1,14 @@
+TODO
+
+use previously-selected aspect ratio as default
+
+Hue on Galaxy Note portrait
+
+Erase
+
+Copy/Move
+
+
+Text
+
+

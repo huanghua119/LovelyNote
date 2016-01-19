@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="horizontal">
+
+    <com.mephone.lovelynote.tag.TagListView
+        android:id="@+id/tag_list_view"
+        android:layout_width="0px"
+        android:layout_height="fill_parent"
+        android:layout_weight=".30"
+        android:gravity="left">
+    </com.mephone.lovelynote.tag.TagListView>
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:layout_weight=".70"
+        android:orientation="vertical">
+
+        <com.mephone.lovelynote.tag.TagCloudView
+            android:id="@+id/tag_cloud_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0">
+        </com.mephone.lovelynote.tag.TagCloudView>
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingRight="15dp"
+            android:paddingTop="0dp"
+            android:textIsSelectable="false"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+</LinearLayout>

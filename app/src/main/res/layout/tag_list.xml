@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="300dp"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tag_list_new_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tag_list_new_label"/>
+
+    <ListView
+        android:id="@+id/tag_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/tag_list_new_label"
+        android:paddingTop="15dp">
+    </ListView>
+
+    <EditText
+        android:id="@+id/tag_list_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tag_list_new_label"
+        android:layout_toRightOf="@id/tag_list_new_label"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:text="@string/tag_list_default_text">
+    </EditText>
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="horizontal">
+
+    <com.mephone.lovelynote.tag.TagListView
+        android:id="@+id/tag_list_view"
+        android:layout_width="0px"
+        android:layout_height="fill_parent"
+        android:layout_weight=".30">
+    </com.mephone.lovelynote.tag.TagListView>
+
+    <com.mephone.lovelynote.thumbnail.ThumbnailView
+        android:id="@+id/thumbnail_grid"
+        android:layout_width="0px"
+        android:layout_height="fill_parent"
+        android:layout_weight=".70">
+    </com.mephone.lovelynote.thumbnail.ThumbnailView>
+
+</LinearLayout>

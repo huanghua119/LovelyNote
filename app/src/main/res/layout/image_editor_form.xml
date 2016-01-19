@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/image_editor_source_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:text="@string/image_editor_source_image"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/image_editor_source_uri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/image_editor_source_label"
+        android:layout_below="@+id/image_editor_source_label"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="15dp"
+        android:ellipsize="middle"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/image_editor_source_uri"/>
+
+    <TextView
+        android:id="@+id/image_editor_resolution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/image_editor_source_uri"
+        android:layout_below="@+id/image_editor_source_uri"
+        android:text="@string/image_editor_resolution"/>
+
+    <CheckBox
+        android:id="@+id/image_editor_aspect_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/image_editor_source_label"
+        android:layout_below="@+id/image_editor_resolution"
+        android:layout_marginTop="15dp"
+        android:checked="true"
+        android:text="@string/image_editor_aspect_checkbox_label"/>
+
+    <Button
+        android:id="@+id/image_editor_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/image_editor_aspect_checkbox"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="25dp"
+        android:text="@android:string/ok"/>
+
+    <Button
+        android:id="@+id/image_editor_erase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/image_editor_ok"
+        android:layout_alignBottom="@+id/image_editor_ok"
+        android:layout_alignLeft="@+id/image_editor_aspect_checkbox"
+        android:text="@string/image_editor_erase"/>
+
+</RelativeLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+    <TextView
+        android:id="@+id/edit_tag_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:text="@string/edit_tag_header"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <EditText
+        android:id="@+id/edit_tag_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/edit_tag_header"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:singleLine="true">
+
+        <requestFocus/>
+    </EditText>
+
+    <TextView
+        android:id="@+id/edit_tag_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_tag_text"
+        android:layout_toRightOf="@+id/edit_tag_header"
+        android:text="@string/edit_tag_help"/>
+
+    <Button
+        android:id="@+id/edit_tag_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/edit_tag_help"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip"
+        android:text="@android:string/ok"/>
+
+    <Button
+        android:id="@+id/edit_tag_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/edit_tag_button"
+        android:layout_toLeftOf="@id/edit_tag_button"
+        android:text="@android:string/cancel"/>
+
+</RelativeLayout>

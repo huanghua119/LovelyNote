@@ -1,0 +1,109 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/preferences_user_handedness">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="toolbox_left"
+            android:summary="@string/preferences_toolbox_left_summary"
+            android:title="@string/preferences_toolbox_left"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="input_preferences_category"
+        android:title="@string/preferences_input">
+        <ListPreference
+            android:entries="@array/preferences_pen_input_mode_entries"
+            android:entryValues="@array/preferences_pen_input_mode_values"
+            android:key="pen_input_mode"
+            android:title="@string/preferences_pen_input_mode_title"/>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="double_tap_while_write"
+            android:summary="@string/preferences_double_tap_summary"
+            android:title="@string/preferences_double_tap">
+        </CheckBoxPreference>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="move_gesture_while_writing"
+            android:summary="@string/preferences_move_gesture_summary"
+            android:title="@string/preferences_move_gesture">
+        </CheckBoxPreference>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="move_gesture_fix_zoom"
+            android:summary="@string/preferences_move_zoom_summary"
+            android:title="@string/preferences_move_zoom"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="palm_shield"
+            android:summary="@string/preferences_palm_shield_summary"
+            android:title="@string/preferences_palm_shield"/>
+        <ListPreference
+            android:defaultValue="@string/preferences_pen_smooth_default"
+            android:entries="@array/preferences_pen_smooth_entries"
+            android:entryValues="@array/preferences_pen_smooth_values"
+            android:key="pen_smooth_filter"
+            android:title="@string/preferences_pen_smooth_filter"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="volume_key_navigation"
+            android:summary="@string/preferences_volume_key_nav_summary"
+            android:title="@string/preferences_volume_key_nav">
+        </CheckBoxPreference>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="show_action_bar"
+            android:summary="@string/preferences_action_bar_summary"
+            android:title="@string/preferences_action_bar"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="hide_system_bar"
+            android:summary="@string/preferences_system_bar_summary"
+            android:title="@string/preferences_system_bar"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="some_tools_switch_back"
+            android:summary="@string/preferences_tools_switch_back_summary"
+            android:title="@string/preferences_tools_switch_back"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="keep_screen_on"
+            android:summary="@string/preferences_keep_screen_on_summary"
+            android:title="@string/preferences_keep_screen_on"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_user_data">
+        <Preference
+            android:key="restore_backup"
+            android:summary="@string/preferences_restore_summary"
+            android:title="@string/preferences_restore">
+        </Preference>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="backup_automatic"
+            android:summary="@string/preferences_backup_auto_summary"
+            android:title="@string/preferences_backup_auto"/>
+
+        <Preference
+            android:key="backup_directory"
+            android:title="@string/preferences_backup_dir"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="debug_preferences_category"
+        android:title="@string/preferences_debug">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="debug_options_enable"
+            android:summary="@string/preferences_incomplete_summary"
+            android:title="@string/preferences_incomplete"/>
+
+        <ListPreference
+            android:defaultValue="@string/preferences_override_pen_type_default"
+            android:entries="@array/preferences_override_pen_type_entries"
+            android:entryValues="@array/preferences_override_pen_type_values"
+            android:key="override_pen_type"
+            android:title="@string/preferences_override_pen_title"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

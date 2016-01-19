@@ -1,0 +1,263 @@
+<html>
+  <head>
+    <style type='text/css'>
+      a            { color:#a0a0e0 }
+      div.title    { 
+          color:#C0F0C0; 
+          font-size:1.2em; 
+          font-weight:bold; 
+          margin-top:1em; 
+          margin-bottom:0.5em; 
+          text-align:center }
+      div.subtitle { 
+          color:#C0F0C0; 
+          font-size:0.8em; 
+          margin-bottom:1em; 
+          text-align:center }
+      div.freetext { color:#F0F0F0 }
+      div.list     { color:#C0C0F0 }
+      body         { background-color:black; }
+    </style>
+  </head>
+  <body>
+$ 10.7
+  % Version 10.7
+  _ 2013-09-01
+    * Use Bezier curves for smoother pen strokes
+    * Fix bug where sometimes PDF export would fail
+$ 10.6
+  % Version 10.6
+  _ 2013-04-08
+    * Duplicate page: also duplicate lines and images
+    * Add smoothing filter (thanks to Dan Kats)
+    * Samsung multi-window mode (thanks to Dan Kats)
+    * Hide action bar on ICS (thanks to <a href="https://play.google.com/store/apps/developer?id=tsorn">tsorn</a>)
+    * Musical paper (thanks to Steve Russell)
+    * Fix pinch-zoom gesture in line and image mode
+$ 10.5
+  % Version 10.5
+  _ 2012-11-03
+    * Make 3rd party programs open Quill for .quill files.
+    * Online sync works now!
+    * Added manual.
+$ 10.4
+  % Version 10.4
+  _ 2012-10-31
+    * The previous version was an incomplete build resulting in spurious crashes.
+    * Online sync is disabled until issues found during beta-test are fixed.
+$ 10.3
+  % Version 10.3
+  _ 2012-10-15
+    * Online sync with <a href="https://quill.sagepad.org">quill.sagepad.org</a>
+    * Fix bug with pages containing only images
+$ 10.2
+  % Version 10.2
+  _ 2012-09-17
+    * Pen button support for Galaxy Note (thanks to Mingfai Ma)
+    * Auto-save the notebook every 15 minutes
+    * Bug fixes
+$ 10.1
+  % Version 10.1
+  _ 2012-08-19
+    * Pen button support for HTC Flyer (thanks to Urban Soban)
+    * Pen detection for Galaxy Note 10.1
+    * Fix back button
+$ 10.0
+  % Version 10.0
+  _ 2012-07-08
+    * New feature: Insert images into your notes  
+$ 9.9
+  % Version 9.9
+  _ 2012-04-19
+    * The previous apk was somehow corrupted
+$ 9.8
+  % Version 9.8
+  _ 2012-04-19
+    * Recover gracefully from I/O errors  
+$ 9.7
+  % Version 9.7
+  _ 2012-04-12
+    * Force close fix
+$ 9.6
+  % Version 9.6
+  _ 2012-04-11
+    * Show prev/next page buttons on smaller screens
+    * More translations (let me know if you find errors)
+    * ThinkPad Tablet pen button (thanks to Ivan Tsybankov)
+$ 9.5
+  % Version 9.5
+  _ 2012-03-28
+    * Make "clear page" also clear straight lines
+    * Export page background to PDF
+    * Reverse Vol up/down navigation
+    * Added German localization
+$ 9.4
+  % Version 9.4
+  _ 2012-03-21
+    * Fix FC when overriding pen detection
+$ 9.3
+  % Version 9.3
+  _ 2012-03-20
+    * Make screen on configurable
+    * Make pinch-to-zoom in move gesture configurable
+    * Support Galaxy Note stylus
+    * Fix for notebook restore
+$ 9.2
+  % Version 9.2
+  _ 2012-03-16
+    * close app when pressing back twice
+    * fix export to specific directory
+    * fix force close in settings
+$ 9.1
+  % Version 9.1
+  _ 2012-03-16
+    * Fixed export to other app
+    * Force close fixes
+$ 9.0
+  % Version 9.0
+  _ 2012-03-08
+    * New internal file format, switching notebooks is much faster now
+    * New file chooser dialog
+    * New icon!
+    * Keep screen on in the main window
+    * Straight lines tool
+$ 8.6
+  % Version 8.6
+  _ 2012-02-08
+    * Really re-enable pressure sensitive pen on some tablets
+$ 8.5
+  % Version 8.5
+  _ 2012-02-07
+    * Fix hide the system bar if USB debugging is disabled
+    * Re-enable pressure sensitive pen on some tablets
+$ 8.4
+  % Version 8.4
+  _ 2012-02-06
+  ! We are featured on the market, thank you all!
+    * Hide the system bar (optional, requires root)
+    * Left-handedness fix
+    * Hide "fountain pen" if tablet does not have digitizer
+    * More bugfixes
+$ 8.3
+  % Version 8.3
+  _ 2012-01-21
+    * xhdpi (Galaxy Nexus) layout fixes
+    * Palm shield default to false (capacitive pen only)
+    * Fix occasional image export bug
+    * Alphabetically sort notebooks
+    * Page duplication (thanks to Stefan Langerman)
+    * Display page number
+$ 8.2
+  % Version 8.2
+  _ 2012-01-04
+  ! We collected $782 for the Red Cross during the Xmas sale!
+    * More paper backgrounds (thanks to Jens Ratsey)
+    * Do not draw background lines when exporting to Evernote
+    * Make snap back after erase configurable
+    * Make export dialog settings persistent
+    * Back button in the thumbnail view now exits
+    * Enhancements for capacitive pens
+$ 8.1
+  % Version 8.1
+  _ 2011-12-20
+    * Make eraser only use pen input if in "pen only" mode
+    * Fix restoring the pen thickness upon launch
+    * Make pen history persistent
+    * Snap back to previous pen after erasing
+    * More bugfixes
+$ 8.0
+  % Version 8.0
+  _ 2011-12-11
+    * Toolbox (press red button)
+    * Fixed mime type in export 
+$ 7.3
+  % Version 7.3
+  _ 2011-12-06
+    * Xmas sales go to charity!
+    * Added dialogs to rename Tags and Notebooks (use long press)
+    * Bug fixes
+$ 7.2
+  % Version 7.2
+  _ 2011-12-01
+    * Fixed one more force close
+$ 7.1
+  % Version 7.1
+  _ 2011-12-01
+    * New launcher icon!
+    * Send multiple pages to Evernote from the page thumbnail window
+    * Tags are now sorted alphabetically
+    * Bugfixes
+$ 7.0
+  % Version 7.0
+  _ 2011-11-27
+    * Implemented multiple notebooks
+    * Undo/redo
+    * Nicer icons
+$ 6.2
+  % Version 6.2
+  _ 2011-11-25
+    * Palm rejection now works on HTC Flyer, probably other HTC devices (thanks to Andy St Lawrence)
+    * Automatic change log (thanks to Karsten Priegnitz)
+    * Reworked pen input mode preferences
+    * Lots of internal restructuring
+    * Bugfixes
+$ 6.1
+  % Version 6.1
+  _ 2011-11-15
+    * Added preference to switch move gesture on/off
+    * Back button switches to thumbnail overview
+$ 6.0
+  % Version 6.0
+  _ 2011-11-10
+    * Much faster PDF export
+    * Allow 2-finger move gesture while writing
+    * Bugfixes
+$ 5.0
+  % Version 5.0
+  _ 2011-10-31
+    * Thumbnail overview over pages
+    * One-touch history of pen color/thickness
+$ 4.2
+  % Version 4.2
+  _ 2011-10-25
+    * Bugfixes
+$ 4.1
+  % Version 4.0
+  _ 2011-10-24
+    * Bugfix
+    * PNG export
+$ 4.0
+  % Version 4.0
+  _ 2011-10-24
+    * Tagging support added.
+$ 3.2
+  % Version 3.2
+  _ 2011-10-15
+    * Another bugfix
+$ 3.1
+  % Version 3.1
+  _ 2011-10-15
+    * Force close fix
+$ 3.0
+  % Version 3.0
+  _ 2011-10-15
+    * Backup/Restore all your data into a single-file archive
+    * Added ruled/quad background paper
+    * Fixed pdf export aspect ratio
+    * Double-finger tap to zoom
+    * Volume button work as next/previous page
+    * Misc. bugfixes
+$ 2.0
+  % Version 2.0
+  _ 2011-10-13
+    * Added PDF export. Right now works but is slow, will make faster in a later version. 
+    * Pen thickness is now accurate even during the pen stroke.
+    * Added "ultra-fine" pen thickness.
+    * Bug fixed where deleting the last empty page would crash.﻿
+$ 1.0
+  % Version 1.0
+  _ 2011-10-12
+    * Initial version
+$ END_OF_CHANGE_LOG
+  </body>
+</html>
