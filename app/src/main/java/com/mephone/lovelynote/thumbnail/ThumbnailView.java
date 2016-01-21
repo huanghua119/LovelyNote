@@ -105,6 +105,5 @@ public class ThumbnailView extends GridView {
             invalidateViews();
         }
 
-        ;
     };
 }

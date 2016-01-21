@@ -129,7 +129,7 @@ public class Background {
         float threshold = 1500;
         if (t.scale < threshold)
             shade += (int) ((threshold - t.scale) / threshold * (0xff - shade));
-        //paint.setARGB(0xff, shade, shade, shade);
+        //mPaint.setARGB(0xff, shade, shade, shade);
         paint.setStrokeWidth(0);
         paint.setColor(Color.DKGRAY);
 
@@ -151,16 +151,16 @@ public class Background {
 
 // I'm leaving this out for now; Should there be a gui to pick the day of the year? Or just let the user write the date?
 //		y0 = t.applyY((widthMm-marginMm)/widthMm);
-//		c.drawText(String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)), x0, y0, paint);
+//		c.drawText(String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)), x0, y0, mPaint);
 //		
-//		paint.setTextSize(t.scaleText(12f));
+//		mPaint.setTextSize(t.scaleText(12f));
 //		
-//		c.drawText(calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault()), x0 + t.applyX(2*marginMm/heightMm), y0 + t.applyY(marginMm/heightMm), paint);
+//		c.drawText(calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault()), x0 + t.applyX(2*marginMm/heightMm), y0 + t.applyY(marginMm/heightMm), mPaint);
 //		
-//		paint.setTextSize(t.scaleText(10f));
+//		mPaint.setTextSize(t.scaleText(10f));
 //		font = Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL);
-//		paint.setTextAlign(Align.RIGHT);
-//		c.drawText("Week " + calendar.get(Calendar.WEEK_OF_YEAR),t.applyX((widthMm-marginMm)/heightMm), t.applyY((float) (marginMm*1.75/widthMm)), paint);
+//		mPaint.setTextAlign(Align.RIGHT);
+//		c.drawText("Week " + calendar.get(Calendar.WEEK_OF_YEAR),t.applyX((widthMm-marginMm)/heightMm), t.applyY((float) (marginMm*1.75/widthMm)), mPaint);
 
         // Details
         paint.setTextAlign(Align.LEFT);

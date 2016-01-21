@@ -87,8 +87,8 @@ public class Bookshelf {
     public static class BookPreviewComparator implements Comparator<BookPreview> {
         @Override
         public int compare(BookPreview lhs, BookPreview rhs) {
-            return lhs.getTitle().compareToIgnoreCase(rhs.getTitle());
-        }
+            return lhs.getLastModifiedTime().before(rhs.getLastModifiedTime()) ? 1 : -1;
+    }
     }
 
     /**
@@ -195,7 +195,9 @@ public class Bookshelf {
 
     public static void sortBookPreviewList() {
         Assert.assertNotNull(data);
-        currentBook.save();
+        if (currentBook != null) {
+            currentBook.save();
+        }
         Collections.sort(data, new BookPreviewComparator());
     }
 

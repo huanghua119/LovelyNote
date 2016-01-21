@@ -1,24 +1,23 @@
 package com.mephone.lovelynote.bookshelf;
 
-import java.util.LinkedList;
-
-import com.mephone.lovelynote.R;
-import com.mephone.lovelynote.data.Book;
-import com.mephone.lovelynote.data.Bookshelf;
-import com.mephone.lovelynote.data.Bookshelf.BookPreview;
-import com.mephone.lovelynote.export.ExportActivity;
-
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.mephone.lovelynote.R;
+import com.mephone.lovelynote.data.Bookshelf;
+import com.mephone.lovelynote.data.Bookshelf.BookPreview;
+import com.mephone.lovelynote.export.ExportActivity;
+import com.mephone.lovelynote.fragment.AllNoteFragment;
+
+import java.util.LinkedList;
 
 public class LongClickDialogFragment extends DialogFragment implements OnClickListener {
     private static final String TAG = "LongClickDialogFragment";
@@ -30,6 +29,8 @@ public class LongClickDialogFragment extends DialogFragment implements OnClickLi
     private Button okButton, cancelButton, exportButton, deleteButton;
     private EditText text;
 
+    private AllNoteFragment mNoteFragment = null;
+
     public static LongClickDialogFragment newInstance(int title, int position) {
         LongClickDialogFragment frag = new LongClickDialogFragment();
         Bundle args = new Bundle();
@@ -37,6 +38,20 @@ public class LongClickDialogFragment extends DialogFragment implements OnClickLi
         args.putInt("position", position);
         frag.setArguments(args);
         return frag;
+    }
+
+    public static LongClickDialogFragment newInstance(int title, int position, AllNoteFragment fragment) {
+        LongClickDialogFragment frag = new LongClickDialogFragment();
+        frag.setNoteFragment(fragment);
+        Bundle args = new Bundle();
+        args.putInt("title", title);
+        args.putInt("position", position);
+        frag.setArguments(args);
+        return frag;
+    }
+
+    private void setNoteFragment(AllNoteFragment fragment) {
+        this.mNoteFragment = fragment;
     }
 
     @Override
@@ -48,11 +63,16 @@ public class LongClickDialogFragment extends DialogFragment implements OnClickLi
         dialog.setTitle(title);
 
         LinkedList<BookPreview> notebooks = Bookshelf.getBookPreviewList();
-        Log.d(TAG, "onCreateDialog " + Bookshelf.getCount() + " " + position);
-        notebook = notebooks.get(position);
-
         text = (EditText) dialog.findViewById(R.id.edit_notebook_title);
-        text.setText(notebook.getTitle());
+        is_new_notebook_dialog = (position == -1);
+        //新建
+        if (is_new_notebook_dialog) {
+                text.setText(R.string.new_notebook_default_title);
+        } else {
+            notebook = notebooks.get(position);
+            text.setText(notebook.getTitle());
+        }
+        text.setSelection(text.length());
         text.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -78,7 +98,6 @@ public class LongClickDialogFragment extends DialogFragment implements OnClickLi
 
         if (notebooks.size() == 1)
             deleteButton.setEnabled(false);
-        is_new_notebook_dialog = (title == R.string.edit_notebook_title_new);
         if (is_new_notebook_dialog) {
             deleteButton.setVisibility(View.INVISIBLE);
             exportButton.setVisibility(View.INVISIBLE);
@@ -89,27 +108,25 @@ public class LongClickDialogFragment extends DialogFragment implements OnClickLi
     @Override
     public void onClick(View v) {
         Bookshelf bookshelf = Bookshelf.getBookshelf();
-        BookshelfActivity activity = ((BookshelfActivity) getActivity());
         switch (v.getId()) {
             case R.id.edit_notebook_button:
-                BookPreview previous = Bookshelf.getCurrentBookPreview();
                 String title = text.getText().toString();
-                if (title.equals(Bookshelf.getCurrentBook().getTitle()))
-                    return;
-                bookshelf.setCurrentBook(notebook);
-                Book book = Bookshelf.getCurrentBook();
-                book.setTitle(title);
-                // book.save();
-                bookshelf.setCurrentBook(previous);
-                // notebook.reload();
-                activity.adapter.notifyDataSetChanged();
+                LinkedList<BookPreview> list = Bookshelf.getBookPreviewList();
+                for (BookPreview pb : list) {
+                    if (title.equals(pb.getTitle())) {
+                        Toast.makeText(getActivity(), "title existence", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+                bookshelf.newBook(title);
+                mNoteFragment.refreshData();
                 dismiss();
                 break;
             case R.id.edit_notebook_cancel:
-                if (is_new_notebook_dialog) {
-                    Bookshelf.getBookshelf().deleteBook(notebook.getUUID());
-                    activity.adapter.notifyDataSetChanged();
-                }
+//                if (is_new_notebook_dialog) {
+//                    Bookshelf.getBookshelf().deleteBook(notebook.getUUID());
+//                    mNoteFragment.refreshData();
+//                }
                 dismiss();
                 break;
             case R.id.edit_notebook_export:
@@ -121,7 +138,7 @@ public class LongClickDialogFragment extends DialogFragment implements OnClickLi
                 break;
             case R.id.edit_notebook_delete:
                 dismiss();
-                activity.showDeleteConfirmationDialog(position);
+                //activity.showDeleteConfirmationDialog(position);
                 break;
         }
     }

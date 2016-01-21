@@ -40,7 +40,7 @@ public class Page {
     public final TagManager.TagSet tags;
     protected float aspect_ratio = AspectRatio.Table[0].ratio;
     protected boolean is_readonly = false;
-    protected Paper.Type paper_type = Paper.Type.RULED;
+    protected Paper.Type paper_type = Paper.Type.EMPTY;
     protected TextBox backgroundText = new TextBox(Tool.TEXT);
 
     // coordinate transformation Stroke -> screen
@@ -226,7 +226,6 @@ public class Page {
             if (!canvas.quickReject(graphics.getBoundingBox(), Canvas.EdgeType.AA))
                 graphics.draw(canvas, bounding_box);
         }
-        Log.i("love_note", "draw stroker:" + strokes.size());
         for (Stroke s : strokes) {
             if (!canvas.quickReject(s.getBoundingBox(), Canvas.EdgeType.AA))
                 s.draw(canvas, bounding_box);

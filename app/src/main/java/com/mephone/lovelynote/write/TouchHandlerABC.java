@@ -99,7 +99,7 @@ public abstract class TouchHandlerABC {
      * @param canvas The canvas to draw to
      * @param bitmap The bitmap of the currently shown part of the page. Usually
      *               you'll want to call canvas.drawBitmap(bitmap, 0, 0, null) to
-     *               paint it onto the canvas. But the touch handler may want to
+     *               mPaint it onto the canvas. But the touch handler may want to
      *               draw some user feedback in addition (or instead). For example,
      *               the pen touch handler draws a rough preview of the pen stroke.
      */

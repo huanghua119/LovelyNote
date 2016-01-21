@@ -230,7 +230,7 @@ public class Stroke extends Graphics {
         if (tool == Tool.PENCIL)
             mPen.setStrokeWidth(scaled_pen_thickness);
         float x0, x1, y0, y1, p0, p1;
-        // c.drawRect(left, top, right, bottom, paint)
+        // c.drawRect(left, top, right, bottom, mPaint)
         // note: we offset the first point by 1/10 pixel since android does not
         // draw lines with start=end
         x0 = position_x[0] * scale + offset_x + 0.1f;
@@ -308,9 +308,9 @@ public class Stroke extends Graphics {
         path.rewind();
         mPen.setStyle(Paint.Style.FILL);
 
-        //Paint paint = new Paint();
-        //paint.setARGB(0xff, 0xff, 0x0, 0x0);
-        //paint.setStrokeWidth(0);
+        //Paint mPaint = new Paint();
+        //mPaint.setARGB(0xff, 0xff, 0x0, 0x0);
+        //mPaint.setStrokeWidth(0);
 //		mPen.setStyle(Paint.Style.STROKE);
 
         final float scaled_pen_thickness = getScaledPenThickness();

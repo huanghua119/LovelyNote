@@ -18,8 +18,8 @@ public class AspectRatio {
     private static final float heightA4 = 297;
     private static final float widthA4 = 210;
 
-    private final static String ASPECT_PORTRAIT = "ASPECT_PORTRAIT";
     private final static String ASPECT_LANDSCAPE = "ASPECT_LANDSCAPE";
+    private final static String ASPECT_PORTRAIT = "ASPECT_PORTRAIT";
     private final static String ASPECT_A4_PAPER = "ASPECT_A4_PAPER";
     private final static String ASPECT_US_LETTER = "ASPECT_US_LETTER";
     private final static String ASPECT_US_LEGAL = "ASPECT_US_LEGAL";
@@ -27,8 +27,8 @@ public class AspectRatio {
     private final static String ASPECT_16_TO_9 = "ASPECT_16_TO_9";
 
     public static final AspectRatio[] Table = {
-            new AspectRatio(ASPECT_PORTRAIT, 800f / 1232f, heightA4),
             new AspectRatio(ASPECT_LANDSCAPE, 1280f / 752f, widthA4),
+            new AspectRatio(ASPECT_PORTRAIT, 800f / 1232f, heightA4),
             new AspectRatio(ASPECT_A4_PAPER, 1f / (float) Math.sqrt(2), heightA4),
             new AspectRatio(ASPECT_US_LETTER, 8f / 11f, 11 * INCH_in_MM),
             new AspectRatio(ASPECT_US_LEGAL, 8f / 14f, 14 * INCH_in_MM),

@@ -93,7 +93,6 @@ public class InkMLHandler extends DefaultHandler {
         super.characters(ch, start, length);
         if (mTagName != null) {
             String data = new String(ch, start, length);
-            Log.i("love_note", "mTagName:" + mTagName + " data:" + data);
             if (mTagName.equals("trace")) {
                 mTraceData.append(data);
             }

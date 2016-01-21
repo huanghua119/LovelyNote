@@ -149,7 +149,7 @@ public class TagCloudView extends View {
         public void draw(Canvas canvas) {
             canvas.save();
             canvas.translate(centerX, centerY);
-            // canvas.drawRect(rect, paint);
+            // canvas.drawRect(rect, mPaint);
             canvas.translate(rect.left + CLOUD_PAD, rect.top + CLOUD_PAD);
             layout.draw(canvas);
             canvas.restore();

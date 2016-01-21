@@ -8,9 +8,11 @@ import java.util.UUID;
 
 import junit.framework.Assert;
 
+import com.mephone.lovelynote.activity.MainActivity;
 import com.mephone.lovelynote.help.HelpBrowser;
 import com.mephone.lovelynote.pen.Hardware;
 import com.mephone.lovelynote.pen.HideBar;
+import com.mephone.lovelynote.thumbnail.ThumbnailActivity;
 import com.mephone.lovelynote.utils.ChangeLog;
 import com.mephone.lovelynote.write.Graphics;
 import com.mephone.lovelynote.write.Graphics.Tool;
@@ -52,9 +54,8 @@ import com.mephone.lovelynote.export.ExportActivity;
 import com.mephone.lovelynote.image.ImageActivity;
 import com.mephone.lovelynote.inkml.Ink;
 import com.mephone.lovelynote.inkml.InkMLProcessor;
-import com.mephone.lovelynote.thumbnail.ThumbnailActivity;
-//import yuku.ambilwarna.AmbilWarnaDialog;
-//import yuku.ambilwarna.AmbilWarnaDialog.OnAmbilWarnaListener;
+import yuku.ambilwarna.AmbilWarnaDialog;
+import yuku.ambilwarna.AmbilWarnaDialog.OnAmbilWarnaListener;
 
 
 public class QuillWriterActivity
@@ -138,7 +139,7 @@ public class QuillWriterActivity
             createTagButton(bar);
         }
 
-        doLoadBookFromXml(book.currentPage());
+        //doLoadBookFromXml(book.currentPage());
 
         switchToPage(book.currentPage());
         setKeepScreenOn();
@@ -284,19 +285,18 @@ public class QuillWriterActivity
     }
 
     private Dialog create_dialog_color() {
-//        AmbilWarnaDialog dlg = new AmbilWarnaDialog(QuillWriterActivity.this, mView.getPenColor(), 
-//        	new OnAmbilWarnaListener()
-//        	{	
-//        		@Override
-//        		public void onCancel(AmbilWarnaDialog dialog) {
-//        		}
-//        		@Override
-//        		public void onOk(AmbilWarnaDialog dialog, int color) {
-//        			setPenColor(color);
-//        		}
-//        	});
-//        return dlg.getDialog();
-        return null;
+        AmbilWarnaDialog dlg = new AmbilWarnaDialog(QuillWriterActivity.this, mView.getPenColor(),
+                new OnAmbilWarnaListener() {
+                    @Override
+                    public void onCancel(AmbilWarnaDialog dialog) {
+                    }
+
+                    @Override
+                    public void onOk(AmbilWarnaDialog dialog, int color) {
+                        setPenColor(color);
+                    }
+                });
+        return dlg.getDialog();
     }
 
     @Override
@@ -797,24 +797,17 @@ public class QuillWriterActivity
         super.onStop();
     }
 
-    private final static int REQUEST_REPORT_BACK_KEY = 1;
     private final static int REQUEST_PICK_IMAGE = 2;
     private final static int REQUEST_EDIT_IMAGE = 3;
 
     private void launchOverviewActivity() {
-        Intent i = new Intent(getApplicationContext(), ThumbnailActivity.class);
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
-            case REQUEST_REPORT_BACK_KEY:
-                if (resultCode != RESULT_OK) return;
-                boolean backPressed = data.getBooleanExtra(ThumbnailActivity.RESULT_BACK_KEY_PRESSED, false);
-                if (backPressed)
-                    finish();
-                break;
             case REQUEST_PICK_IMAGE:
             case REQUEST_EDIT_IMAGE:
                 if (resultCode != RESULT_OK) return;
@@ -834,11 +827,11 @@ public class QuillWriterActivity
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent i = new Intent(getApplicationContext(), ThumbnailActivity.class);
-        startActivityForResult(i, REQUEST_REPORT_BACK_KEY);
-    }
+//    @Override
+//    public void onBackPressed() {
+//        Intent i = new Intent(getApplicationContext(), ThumbnailActivity.class);
+//        startActivityForResult(i, REQUEST_REPORT_BACK_KEY);
+//    }
 
 
     public void add(Page page, int position) {

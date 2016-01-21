@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
               android:background="@color/note_fragment_bg_color"
               android:orientation="vertical">
 
@@ -20,23 +20,47 @@
             android:text="@string/note_count"/>
 
         <LinearLayout
+            android:id="@+id/normal_mode"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="visible">
 
             <ImageView
                 android:id="@+id/note_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:drawable/ic_search_category_default"/>
+                android:background="@android:drawable/ic_menu_search"/>
 
             <ImageView
                 android:id="@+id/note_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/ic_menu_add"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/select_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/note_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/ic_menu_edit"/>
+
+            <ImageView
+                android:id="@+id/note_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/ic_menu_delete"/>
         </LinearLayout>
     </RelativeLayout>
 
