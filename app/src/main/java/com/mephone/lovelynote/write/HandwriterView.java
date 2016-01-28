@@ -8,6 +8,7 @@ import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
@@ -31,7 +32,6 @@ import junit.framework.Assert;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.UUID;
-
 
 public class HandwriterView
         extends ViewGroup
@@ -80,6 +80,20 @@ public class HandwriterView
 
     public Toolbox getToolBox() {
         return toolbox;
+    }
+
+    private Clipbox clipbox;
+
+    public Clipbox getClipbox() {
+        return clipbox;
+    }
+
+    private void setClipbox() {
+        if (clipbox != null) {
+            removeView(clipbox);
+        }
+        clipbox = new Clipbox(getContext(), this);
+        addView(clipbox);
     }
 
     private ToolHistory toolHistory = ToolHistory.getToolHistory();
@@ -280,6 +294,9 @@ public class HandwriterView
             case IMAGE:
                 touchHandler = new TouchHandlerImage(this);
                 break;
+            case SELECT:
+                touchHandler = new TouchHandlerSelect(this);
+                break;
             default:
                 touchHandler = null;
         }
@@ -436,6 +453,7 @@ public class HandwriterView
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getContext());
         boolean left = settings.getBoolean(KEY_TOOLBOX_IS_ON_LEFT, true);
         setToolbox(left);
+        setClipbox();
 
         Hardware hw = Hardware.getInstance(context);
         hw.addViewHack(this);
@@ -557,6 +575,7 @@ public class HandwriterView
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         toolbox.measure(widthMeasureSpec, heightMeasureSpec);
+        clipbox.measure(widthMeasureSpec, heightMeasureSpec);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
@@ -698,7 +717,6 @@ public class HandwriterView
 
     @Override
     protected void onDraw(Canvas canvas) {
-        Log.i("onDraw", "touchHandler:" + touchHandler);
         if (bitmap == null) return;
         if (touchHandler != null)
             touchHandler.draw(canvas, bitmap);
@@ -778,6 +796,20 @@ public class HandwriterView
         }
     }
 
+    public void deleteStrokesIn(RectF r) {
+        LinkedList<Graphics> toSelect = new LinkedList<Graphics>();
+        for (Stroke s : page.strokes) {
+            if (!RectF.intersects(r, s.getBoundingBox())) continue;
+            if (s.intersects(r)) {
+                toSelect.add(s);
+            }
+        }
+        if (!toSelect.isEmpty()) {
+            graphicsListener.onGraphicsDeleteListener(page, toSelect);
+            invalidate();
+            touchHandler.destroy();
+        }
+    }
 
     protected void saveStroke(Stroke s) {
         if (page.is_readonly) {

@@ -8,4 +8,9 @@
     <string name="note_defalut_name">Virtual Page</string>
     <string name="note_select">Select</string>
     <string name="delete_note_confirm">确定要删除笔记(%s)吗？</string>
+    <string name="copy">Copy</string>
+    <string name="cut">Cut</string>
+    <string name="delete">Delete</string>
+    <string name="paste">Paste</string>
+    <string name="cancel">Cancel</string>
 </resources>

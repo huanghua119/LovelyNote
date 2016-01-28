@@ -8,4 +8,5 @@ public interface InputListener {
     void onPickImageListener(GraphicsImage image);
 
     void onEditImageListener(GraphicsImage image);
+
 }

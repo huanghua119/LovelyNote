@@ -76,6 +76,15 @@ public class UndoManager
         cmd.execute();
     }
 
+    @Override
+    public void onGraphicsDeleteListener(Page page, LinkedList<Graphics> toDelete) {
+        Command cmd = new CommandDeleteGraphics(page, toDelete);
+        undoStack.addFirst(cmd);
+        redoStack.clear();
+        limitStackSize();
+        cmd.execute();
+    }
+
     public void onPageClearListener(Page page) {
         Command cmd = new CommandClearPage(page);
         undoStack.addFirst(cmd);

@@ -240,6 +240,8 @@ public class Toolbox
                 return textButton;
             case IMAGE:
                 return photoButton;
+            case SELECT:
+                return photoButton;
             default:
                 Assert.fail();
                 return null;

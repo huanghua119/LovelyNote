@@ -141,11 +141,11 @@ public abstract class GraphicsControlpoint extends Graphics {
     protected GraphicsControlpoint(Tool mTool) {
         super(mTool);
         fillPaint = new Paint();
-        fillPaint.setARGB(0x20, 0xff, 0x0, 0x0);
+        fillPaint.setARGB(0x0, 0x0, 0x0, 0x0);
         fillPaint.setStyle(Style.FILL);
         fillPaint.setAntiAlias(true);
         outlinePaint = new Paint();
-        outlinePaint.setARGB(0x80, 0x0, 0x0, 0x0);
+        outlinePaint.setARGB(0xff, 0xaa, 0x00, 0x0);
         outlinePaint.setStyle(Style.STROKE);
         outlinePaint.setStrokeWidth(2.5f);
         outlinePaint.setAntiAlias(true);
@@ -176,8 +176,10 @@ public abstract class GraphicsControlpoint extends Graphics {
         for (Controlpoint p : controlpoints) {
             float x = p.screenX();
             float y = p.screenY();
-            canvas.drawCircle(x, y, controlpointRadius(), fillPaint);
-            canvas.drawCircle(x, y, controlpointRadius(), outlinePaint);
+            canvas.drawRect(x - controlpointRadius(), y - controlpointRadius(), x + controlpointRadius(), y + controlpointRadius(), fillPaint);
+            canvas.drawRect(x - controlpointRadius(), y - controlpointRadius(), x + controlpointRadius(), y + controlpointRadius(), outlinePaint);
+            //canvas.drawCircle(x, y, controlpointRadius(), fillPaint);
+            //canvas.drawCircle(x, y, controlpointRadius(), outlinePaint);
         }
     }
 

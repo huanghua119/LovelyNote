@@ -106,11 +106,11 @@ public class QuillWriterActivity
         //testDefaultPreferences();
         if (UpdateActivity.needUpdate(this)) return;
 
-        if (!Global.releaseModeOEM) {
-            ChangeLog changeLog = new ChangeLog(this);
-            if (changeLog.firstRun())
-                changeLog.getLogDialog().show();
-        }
+//        if (!Global.releaseModeOEM) {
+//            ChangeLog changeLog = new ChangeLog(this);
+//            if (changeLog.firstRun())
+//                changeLog.getLogDialog().show();
+//        }
         book = Bookshelf.getCurrentBook();
         book.setOnBookModifiedListener(UndoManager.getUndoManager());
         Assert.assertTrue("Book object not initialized.", book != null);
@@ -441,6 +441,9 @@ public class QuillWriterActivity
                 return true;
             case R.id.width:
                 showDialog(DIALOG_THICKNESS);
+                return true;
+            case R.id.select:
+                setActiveTool(Tool.SELECT);
                 return true;
             case R.id.color:
                 showDialog(DIALOG_COLOR);
